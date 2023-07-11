@@ -5,6 +5,7 @@ import {BsBag} from 'react-icons/bs';
 import {IoWatch, IoClose} from 'react-icons/io5';
 import {FaBars} from 'react-icons/fa';
 import {BsArrowRight} from 'react-icons/bs';
+import {AiFillApple} from 'react-icons/ai'; 
 
 
 const Menu = styled.nav`
@@ -14,7 +15,7 @@ const Menu = styled.nav`
     height: 45px;
     width: 100%;
     background-color: #333;
-    @media (max-width: 768px) {
+    @media (max-width: 870px) {
     padding: 0 30px;
     justify-content: space-between;
   }
@@ -24,7 +25,7 @@ const NavMenu = styled.ul`
     display:  flex;
     align-items: center;
     padding: 15px;
-    @media (max-width: 768px) {
+    @media (max-width: 870px) {
     display: ${props => (props.isOpen ? 'flex' : 'none')};
     padding: 30px;
     flex-direction: column;
@@ -134,8 +135,8 @@ const Text = styled.p`
 
 const NavList = styled.li`
     list-style: none;
-    margin-right: 30px;
     font-size: 12px;
+    margin-right: 23px;
     font-weight: 300;
     color: #e1e1e1;
     cursor: pointer;
@@ -143,7 +144,7 @@ const NavList = styled.li`
     color: #fff;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 870px) {
     font-size: 22px;
     display: block;
     margin: 5px 0;
@@ -188,7 +189,7 @@ const ButtonStyled = styled(Button)`
   color: white;
   display: none;
   height: 18px;
-  @media (max-width: 768px) {
+  @media (max-width: 870px) {
     display: block;
     z-index: 1;
   }
@@ -223,12 +224,17 @@ export default function Navbar() {
 
   return (
     <Menu>
-      <IconLogo><IoWatch size={20} /></IconLogo>
+      <IconLogo><AiFillApple size={20} /></IconLogo>
       <NavMenu isOpen={mobile}>
-        <NavList>Home</NavList>
-        <NavList>Produtos</NavList>
-        <NavList>Serviços</NavList>
-        <NavList>Sobre</NavList>
+        <NavList>Loja</NavList>
+        <NavList>Mac</NavList>
+        <NavList>iPad</NavList>
+        <NavList>iPhone</NavList>
+        <NavList>Watch</NavList>     
+        <NavList>AirPods</NavList>     
+        <NavList>Tv e Casa</NavList>     
+        <NavList>Entretenimento</NavList>     
+        <NavList>Acessórios</NavList>     
         <NavList>Suporte</NavList>     
       </NavMenu>
 
