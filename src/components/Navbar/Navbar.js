@@ -14,7 +14,8 @@ const Menu = styled.nav`
     justify-content: center;
     height: 45px;
     width: 100%;
-    background-color: #333;
+    background-color: rgba(22, 22, 23, .8);
+    position: fixed;
     @media (max-width: 870px) {
     padding: 0 30px;
     justify-content: space-between;
@@ -36,6 +37,7 @@ const NavMenu = styled.ul`
     left: 0;
     bottom: 0;
     right: 0;
+    transition: display 0.5s ease;
   }
 `
 
@@ -50,6 +52,7 @@ const NavInput = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
+  transition: 0.5s;
 `
 
 const NavInputBox = styled.div`
