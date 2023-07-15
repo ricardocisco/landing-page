@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {BsBag} from 'react-icons/bs';
-import {IoWatch, IoClose} from 'react-icons/io5';
+import {IoClose} from 'react-icons/io5';
 import {FaBars} from 'react-icons/fa';
 import {BsArrowRight} from 'react-icons/bs';
 import {AiFillApple} from 'react-icons/ai'; 
+import { Link } from 'react-router-dom';
 
 
 const Menu = styled.nav`
@@ -27,7 +28,7 @@ const NavMenu = styled.ul`
     align-items: center;
     padding: 15px;
     @media (max-width: 870px) {
-    display: ${props => (props.isOpen ? 'flex' : 'none')};
+    display: ${props => (props.isOpen ? 'block' : 'none')};
     padding: 30px;
     flex-direction: column;
     align-items: flex-start;
@@ -37,7 +38,6 @@ const NavMenu = styled.ul`
     left: 0;
     bottom: 0;
     right: 0;
-    transition: display 0.5s ease;
   }
 `
 
@@ -45,14 +45,13 @@ const NavInput = styled.div`
   display: ${props => (props.isOpen ? 'flex' : 'none')};
   align-items: center;
   justify-content: center;
-  height: 35%;
+  height: 40%;
   background-color: #333;
   position: fixed;
   top: 45px;
   left: 0;
   bottom: 0;
   right: 0;
-  transition: 0.5s;
 `
 
 const NavInputBox = styled.div`
@@ -110,11 +109,11 @@ const TitleNav = styled(Title)`
   font-weight: 300;
 `
 
-const Link = styled.a`
+const LinkA = styled.a`
 
 `
 
-const LinkBlue = styled(Link)`
+const LinkBlue = styled(LinkA)`
   display: flex;
   align-items: center;
   border-bottom: 1px solid;
@@ -124,7 +123,7 @@ const LinkBlue = styled(Link)`
   cursor: pointer;
 `
 
-const LinkStyled = styled(Link)`
+const LinkStyled = styled(LinkA)`
   display: flex;
   align-items: center;
   color: #fff;
@@ -132,28 +131,47 @@ const LinkStyled = styled(Link)`
   cursor: pointer;
 `
 
-const Text = styled.p`
-  margin-left: 10px;
-`
-
-const NavList = styled.li`
-    list-style: none;
-    font-size: 12px;
-    margin-right: 23px;
-    font-weight: 300;
-    color: #e1e1e1;
-    cursor: pointer;
-    &:hover{
-    color: #fff;
-    }
-
-    @media (max-width: 870px) {
+const LinkMenu = styled(Link)`
+  text-decoration: none;
+  list-style: none;
+  font-size: 12px;
+  margin-right: 23px;
+  font-weight: 300;
+  color: #e1e1e1;
+  cursor: pointer;
+  &:hover{
+  color: #fff;
+  }
+  @media (max-width: 870px) {
     font-size: 22px;
     display: block;
     margin: 5px 0;
     margin-top: 10px;
-  }
+   }
 `
+
+const Text = styled.p`
+  margin-left: 10px;
+`
+
+// const NavList = styled.li`
+//     list-style: none;
+//     font-size: 12px;
+//     margin-right: 23px;
+//     font-weight: 300;
+//     color: #e1e1e1;
+//     cursor: pointer;
+//     &:hover{
+//     color: #fff;
+//     }
+
+//     @media (max-width: 870px) {
+//     font-size: 22px;
+//     display: block;
+//     margin: 5px 0;
+//     margin-top: 10px;
+//   }
+// `
 
 const MenuBar = styled.div`
   display: flex;
@@ -229,16 +247,16 @@ export default function Navbar() {
     <Menu>
       <IconLogo><AiFillApple size={20} /></IconLogo>
       <NavMenu isOpen={mobile}>
-        <NavList>Loja</NavList>
-        <NavList>Mac</NavList>
-        <NavList>iPad</NavList>
-        <NavList>iPhone</NavList>
-        <NavList>Watch</NavList>     
-        <NavList>AirPods</NavList>     
-        <NavList>Tv e Casa</NavList>     
-        <NavList>Entretenimento</NavList>     
-        <NavList>Acessórios</NavList>     
-        <NavList>Suporte</NavList>     
+        <LinkMenu>Loja</LinkMenu>
+        <LinkMenu>Mac</LinkMenu>
+        <LinkMenu>iPad</LinkMenu>
+        <LinkMenu>iPhone</LinkMenu>
+        <LinkMenu>Watch</LinkMenu>     
+        <LinkMenu>AirPods</LinkMenu>     
+        <LinkMenu>Tv e Casa</LinkMenu>     
+        <LinkMenu>Entretenimento</LinkMenu>     
+        <LinkMenu>Acessórios</LinkMenu>     
+        <LinkMenu>Suporte</LinkMenu>     
       </NavMenu>
 
       <NavInput isOpen={menu}>

@@ -12,8 +12,6 @@ import HeroMacTablet from '../Hero/images/hero_macbook_air_15_tablet.jpg';
 import {SlArrowRight} from 'react-icons/sl';
 
 
-
-
 const HeroContainer = styled.div`
     display:flex;
     flex-direction: column;
